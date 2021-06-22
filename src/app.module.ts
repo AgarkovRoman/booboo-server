@@ -8,10 +8,11 @@ import { User } from './users/users.model';
 import { RolesService } from './roles/roles.service';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
+import { UserRoles } from './roles/user-role.model';
 
 @Module({
-  controllers: [AppController],
-  providers: [AppService, RolesService],
+  controllers: [],
+  providers: [],
   imports: [
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
@@ -23,7 +24,7 @@ import { Role } from './roles/roles.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role],
+      models: [User, Role, UserRoles],
       autoLoadModels: true,
     }),
     UsersModule,
