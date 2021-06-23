@@ -11,7 +11,6 @@ export class RolesController {
     return this.roleService.createRole(roleDto);
   }
 
-  // TODO: сделать так и на получение пользователя
   @Get('/:value')
   getByValue(@Param('value') value: string) {
     return this.roleService.getRoleByValue(value);
