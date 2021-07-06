@@ -13,21 +13,23 @@ export class ProjectsController {
   @ApiResponse({ status: 200, type: Project })
   @Post()
   createProject(@Body() dto: CreateProjectDto) {
-    console.log('controller: ', dto);
     return this.projectsService.createProject(dto);
   }
 
   // updateProject() {}
 
-  // @Delete()
-  // deleteProject(projectId) {
-  //   return this.projectsService.delete(projectId);
-  // }
+  @ApiOperation({ summary: 'Deleting project' })
+  @ApiResponse({ status: 200 })
+  @Delete('/:id')
+  deleteProject(@Param('id') projectId: number) {
+    return this.projectsService.delete(projectId);
+  }
 
-  // @Get('/:id')
-  // getAllProjects(@Param('id') id: number) {
-  //   return this.projectsService.getProjectsByUserId(id);
-  // }
-
-  // getProjectByUserId() {}
+  @ApiOperation({ summary: 'Getting projects by user id' })
+  @ApiResponse({ status: 200, type: [Project] })
+  // TODO: сделать по токену, а не по id
+  @Get('/:id')
+  getProjectsByUserId(@Param('id') id: number) {
+    return this.projectsService.getProjectsByUserId(id);
+  }
 }

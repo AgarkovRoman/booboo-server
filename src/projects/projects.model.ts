@@ -11,7 +11,7 @@ import { User } from '../users/users.model';
 
 interface ProjectCreationAttrs {
   name: string;
-  description: string;
+  description?: string;
   userId: number;
 }
 
@@ -32,7 +32,7 @@ export class Project extends Model<Project, ProjectCreationAttrs> {
 
   @ApiProperty({ example: 'Project 1', description: 'Project description' })
   @Column({ type: DataType.STRING })
-  description: string;
+  description?: string;
 
   @ForeignKey(() => User)
   @Column({ type: DataType.INTEGER })

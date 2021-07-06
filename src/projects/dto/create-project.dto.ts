@@ -11,7 +11,7 @@ export class CreateProjectDto {
     description: 'Project description',
   })
   @IsString({ message: 'Must be a string' })
-  readonly description: string;
+  readonly description?: string;
 
   @ApiProperty({ example: '1' })
   @IsNumber({}, { message: 'Must be a number' })

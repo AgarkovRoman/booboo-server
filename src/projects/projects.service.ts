@@ -10,16 +10,19 @@ export class ProjectsService {
   ) {}
 
   async createProject(dto: CreateProjectDto) {
-    const project = await this.projectRepository.create(dto);
-    console.log('project: ', project);
-    return project;
+    return await this.projectRepository.create(dto);
   }
 
-  // async delete(id: number) {
-  //   return await this.projectRepository.destroy({}, id);
-  // }
+  async delete(projectId: number) {
+    return await this.projectRepository.destroy({
+      where: { id: projectId },
+    });
+  }
 
-  async getProjectsByUserId(id: number) {
-    return await this.projectRepository.findByPk(id);
+  async getProjectsByUserId(userId: number) {
+    return await this.projectRepository.findAll({
+      where: { userId },
+      raw: true,
+    });
   }
 }
