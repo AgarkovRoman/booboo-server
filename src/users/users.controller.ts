@@ -18,14 +18,14 @@ export class UsersController {
   //   return this.usersService.createUser(userDto);
   // }
 
-  @ApiOperation({ summary: 'Getting user by Id' })
+  @ApiOperation({ summary: 'Get user by Id' })
   @ApiResponse({ status: 200, type: User })
   @Get('/:id')
   getById(@Param('id') id: number) {
     return this.usersService.getUserById(id);
   }
 
-  @ApiOperation({ summary: 'Getting all users' })
+  @ApiOperation({ summary: 'Get all users' })
   @ApiResponse({ status: 200, type: User })
   @Roles('ADMIN')
   @UseGuards(RolesGuard)

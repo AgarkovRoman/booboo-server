@@ -9,7 +9,7 @@ import { Project } from './projects.model';
 export class ProjectsController {
   constructor(private projectsService: ProjectsService) {}
 
-  @ApiOperation({ summary: 'Project creating' })
+  @ApiOperation({ summary: 'Create project ' })
   @ApiResponse({ status: 200, type: Project })
   @Post()
   createProject(@Body() dto: CreateProjectDto) {
@@ -18,14 +18,14 @@ export class ProjectsController {
 
   // updateProject() {}
 
-  @ApiOperation({ summary: 'Deleting project' })
+  @ApiOperation({ summary: 'Delete project' })
   @ApiResponse({ status: 200 })
   @Delete('/:id')
   deleteProject(@Param('id') projectId: number) {
-    return this.projectsService.delete(projectId);
+    return this.projectsService.deleteProject(projectId);
   }
 
-  @ApiOperation({ summary: 'Getting projects by user id' })
+  @ApiOperation({ summary: 'Get projects by user id' })
   @ApiResponse({ status: 200, type: [Project] })
   // TODO: сделать по токену, а не по id
   @Get('/:id')

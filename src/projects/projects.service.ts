@@ -13,7 +13,7 @@ export class ProjectsService {
     return await this.projectRepository.create(dto);
   }
 
-  async delete(projectId: number) {
+  async deleteProject(projectId: number) {
     return await this.projectRepository.destroy({
       where: { id: projectId },
     });
