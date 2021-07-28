@@ -8,8 +8,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder().setTitle('Boo REST API').build();
-
   const document = SwaggerModule.createDocument(app, config);
+
   SwaggerModule.setup('/api/docs/', app, document);
 
   // app.useGlobalPipes(new ValidationPipe());
