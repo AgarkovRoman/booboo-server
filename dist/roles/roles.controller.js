@@ -49,7 +49,7 @@ __decorate([
 ], RolesController.prototype, "getByValue", null);
 RolesController = __decorate([
     swagger_1.ApiTags('Roles'),
-    common_1.Controller('roles'),
+    common_1.Controller('api/roles'),
     __metadata("design:paramtypes", [roles_service_1.RolesService])
 ], RolesController);
 exports.RolesController = RolesController;

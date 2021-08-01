@@ -74,7 +74,7 @@ __decorate([
 ], TasksController.prototype, "deleteTasksById", null);
 TasksController = __decorate([
     swagger_1.ApiTags('Tasks'),
-    common_1.Controller('tasks'),
+    common_1.Controller('api/tasks'),
     __metadata("design:paramtypes", [tasks_service_1.TasksService])
 ], TasksController);
 exports.TasksController = TasksController;

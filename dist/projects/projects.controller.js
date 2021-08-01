@@ -61,7 +61,7 @@ __decorate([
 ], ProjectsController.prototype, "getProjectsByUserId", null);
 ProjectsController = __decorate([
     swagger_1.ApiTags('Projects'),
-    common_1.Controller('projects'),
+    common_1.Controller('api/projects'),
     __metadata("design:paramtypes", [projects_service_1.ProjectsService])
 ], ProjectsController);
 exports.ProjectsController = ProjectsController;
