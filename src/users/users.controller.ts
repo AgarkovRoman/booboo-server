@@ -7,7 +7,7 @@ import { RolesGuard } from '../auth/roles.guard';
 import { AddRoleDto } from './dto/add-role.dto';
 
 @ApiTags('Users')
-@Controller('api/users')
+@Controller('/users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 

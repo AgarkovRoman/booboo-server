@@ -6,7 +6,7 @@ import { Task } from './tasks.model';
 import { GetTaskDto } from './dto/get-task.dto';
 
 @ApiTags('Tasks')
-@Controller('api/tasks')
+@Controller('/tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
